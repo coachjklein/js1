@@ -111,3 +111,28 @@ function agePerson(years), dailyProduct(amount){
   return (80 - years) * amount * 365;
 };
 alert(agePerson(parseInt(prompt("You will need "))));
+
+/* Create event listeners for each:
+1. For the button, alert the user with a message when they click it.
+HINT: for 2 and 3, look closely at all the properties you have access to in you event listenter "event" agreement
+2. For the div, change the color of the background when their mouse goes into the div.
+3. For the h1, change the color of the text the mouse leave the h1.
+To create an event listener: you need 1. variable that holds the element and 2. the listener
+*/
+
+let button = document.querySelector('button');
+let div = document.querySelector('div');
+let h1 = document.querySelector('h1');
+
+button.addEventListener('click', e => {
+  // 1st option is an alert, 2nd option is e.target below: alert('Hey, good job!!');
+  e.target.textContent = "Goodbye cats!";
+});
+div.addEventListener('mouseenter', e => {
+    e.target.style.backgroundColor = "red";
+    console.log(e);
+)};
+
+h1.addEventListener('mouseleave', e => {
+    e.target.style.color = "white";
+});
