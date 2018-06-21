@@ -110,3 +110,25 @@ setTimeout(
   alert(advertisement);
 },5000//how long you want to ait for ad to display time in milliseconds 5000=5 seconds
 );
+
+
+
+
+let cart = [];
+function Product(name, price, description){
+  this.name = name;
+  this.price = price;
+  this.description = description;
+};
+let soapBtn = document.forms.orderForm.soap;
+soapBtn.addEventListener('click', e => {
+  e.preventDefault();
+  let soap = new Product("soap", 2.99, "makes you clean");
+  cart.push(soap);
+  localStorage.setItem('soap', JSON.stringify(soap));
+});
+function getSoap(){
+  localStorage.getItem('soap');
+  console.log(JSON.parse(storedItem));
+};
+getSoap();
